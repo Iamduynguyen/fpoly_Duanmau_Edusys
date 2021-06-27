@@ -61,6 +61,8 @@ public class LoginGui extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_log.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txt_us.setText("TeoNV");
         btn_log.add(txt_us, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 160, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -70,6 +72,13 @@ public class LoginGui extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Tên tài khoản :");
         btn_log.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, 20));
+
+        txt_pw.setText("123456");
+        txt_pw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_pwActionPerformed(evt);
+            }
+        });
         btn_log.add(txt_pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 160, 30));
 
         btnend.setBackground(new java.awt.Color(255, 0, 51));
@@ -131,6 +140,10 @@ public class LoginGui extends javax.swing.JFrame {
     private void btnloginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnloginKeyPressed
         
     }//GEN-LAST:event_btnloginKeyPressed
+
+    private void txt_pwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pwActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_pwActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

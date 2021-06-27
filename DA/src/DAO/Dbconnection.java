@@ -13,7 +13,7 @@ import java.sql.*;
 public class Dbconnection {
     private final static String user = "duy";
     private final static String pw = "a";
-    private final static String dbname = "Polypro";
+    private final static String dbname = "abc";
     private final static String hostname = "127.0.0.1";
     private final static String connectionURL = "jdbc:sqlserver://" + hostname
             + ":1433;databaseName=" + dbname;

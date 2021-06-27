@@ -59,7 +59,7 @@ public class KhoaHocGUI extends JInternalFrame {
         txtngaytao.setText(Help.FormatDate.stringDD(new Date()));
         txtngaytao.setEditable(false);
         btn_add.setEnabled(false);
-        tbmodel = (DefaultTableModel) tb_nguoihoc.getModel();
+        tbmodel = (DefaultTableModel) tb_khoahoc.getModel();
     }
 
     private void loadtb() {
@@ -82,7 +82,7 @@ public class KhoaHocGUI extends JInternalFrame {
     }
 
     private void refresh() {
-        txtkhaigiang.setText(Help.FormatDate.stringDD(new Date()));
+        txtkhaigiang.setText("");
         txtgichu.setText("");
         cbbchuyende.setSelectedIndex(1);
         ChuyenDe x = lstCD.get(0);
@@ -103,10 +103,10 @@ public class KhoaHocGUI extends JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
+        tabtb = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tb_nguoihoc = new javax.swing.JTable();
+        tb_khoahoc = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -147,9 +147,9 @@ public class KhoaHocGUI extends JInternalFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
         jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
-        jTabbedPane3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        tabtb.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        tb_nguoihoc.setModel(new javax.swing.table.DefaultTableModel(
+        tb_khoahoc.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -157,7 +157,12 @@ public class KhoaHocGUI extends JInternalFrame {
                 "Mã khóa học", "Thời lượng", "Học phí", "Khai giảng", "Tạo bởi", "Ngày tạo"
             }
         ));
-        jScrollPane1.setViewportView(tb_nguoihoc);
+        tb_khoahoc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb_khoahocMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tb_khoahoc);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -173,7 +178,7 @@ public class KhoaHocGUI extends JInternalFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane3.addTab("DANH SÁCH", jPanel3);
+        tabtb.addTab("DANH SÁCH", jPanel3);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -310,9 +315,9 @@ public class KhoaHocGUI extends JInternalFrame {
         jPanel2.add(txtchuyende, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 300, -1));
         jPanel2.add(txthocphi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 300, -1));
 
-        jTabbedPane3.addTab("CẬP NHẬT", jPanel2);
+        tabtb.addTab("CẬP NHẬT", jPanel2);
 
-        jPanel1.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 700, 360));
+        jPanel1.add(tabtb, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 700, 360));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -387,6 +392,7 @@ public class KhoaHocGUI extends JInternalFrame {
             btn_add.setEnabled(false);
             btn_change.setEnabled(true);
             btn_delete.setEnabled(true);
+            loadtext();
         } else {
             btn_add.setEnabled(true);
             btn_change.setEnabled(false);
@@ -483,6 +489,13 @@ public class KhoaHocGUI extends JInternalFrame {
         txtthuongluong.setText(x.getThoiluongCD() + "");
     }//GEN-LAST:event_cbbchuyendeItemStateChanged
 
+    private void tb_khoahocMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_khoahocMouseClicked
+        // TODO add your handling code here:
+        tabtb.setSelectedIndex(1);
+        _index = tb_khoahoc.getRowCount()-1;
+        loadtext();
+    }//GEN-LAST:event_tb_khoahocMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -544,8 +557,8 @@ public class KhoaHocGUI extends JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTable tb_nguoihoc;
+    private javax.swing.JTabbedPane tabtb;
+    private javax.swing.JTable tb_khoahoc;
     private javax.swing.JTextField txtchuyende;
     private javax.swing.JTextArea txtgichu;
     private javax.swing.JTextField txthocphi;

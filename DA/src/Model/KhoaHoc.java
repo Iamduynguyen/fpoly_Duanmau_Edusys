@@ -12,6 +12,7 @@ import DAO.DAOLogin;
  * @author dell
  */
 public class KhoaHoc {
+
     private int idKh;
     private int thoiluong;
     private double hocphi;
@@ -32,7 +33,6 @@ public class KhoaHoc {
     public void setIdKh(int idKh) {
         this.idKh = idKh;
     }
-
 
     public int getThoiluong() {
         return thoiluong;
@@ -65,7 +65,6 @@ public class KhoaHoc {
     public void setGhichu(String ghichu) {
         this.ghichu = ghichu;
     }
-    
 
     public void setNguoitao(String nguoitao) {
         this.nguoitao = nguoitao;
@@ -94,7 +93,5 @@ public class KhoaHoc {
     public void setNgayKG(String ngayKG) {
         this.ngayKG = ngayKG;
     }
-    
-    
-    
+
 }
